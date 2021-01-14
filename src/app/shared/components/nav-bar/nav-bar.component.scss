@@ -1,0 +1,39 @@
+.nav-bar__container {
+  height: 8vh;
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #fff;
+  box-shadow: 0 2px 2px #aaa;
+}
+
+.nav-bar__button {
+  height: 100%;
+  width: 200px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: 0 2px;
+
+  background-color: #fff;
+  color: #888;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: arial, sans-serif;
+  
+  box-sizing: border-box;
+  border-bottom: 4px solid var(--accent-color);
+}
+
+.nav-bar__button:hover {
+  background-color: var(--dim-accent-color);
+  color: #000;
+  transition: .3s;
+}
+
