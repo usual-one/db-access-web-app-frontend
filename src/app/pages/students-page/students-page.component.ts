@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { StateService } from '../../shared/services';
+
 @Component({
   selector: 'app-students-page',
   templateUrl: './students-page.component.html',
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StudentsPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private stateService: StateService) { }
 
   ngOnInit(): void {
+    this.stateService.pageState = 'students';
+    this.stateService.innerState = '';
   }
 
 }

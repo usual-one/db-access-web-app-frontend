@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { StateService } from '../../shared/services';
+
 @Component({
   selector: 'app-not-found-page',
   templateUrl: './not-found-page.component.html',
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NotFoundPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private stateService: StateService) { }
 
   ngOnInit(): void {
+    this.stateService.pageState = 'not-found';
+    this.stateService.innerState = '';
   }
 
 }

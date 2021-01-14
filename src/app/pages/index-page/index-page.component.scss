@@ -1,0 +1,28 @@
+.index-page__container {
+  width: 100%;
+  height: 92vh;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.diagram-container {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.diagram-header {
+  margin: 20px 0;
+
+  font-size: 20px;
+  font-weight: bold;
+  font-family: arial, sans-serif;
+}
+
+.diagram {
+  width: 40%;
+}
