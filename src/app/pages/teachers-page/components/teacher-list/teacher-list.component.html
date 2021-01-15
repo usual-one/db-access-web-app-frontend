@@ -1,0 +1,20 @@
+<div class="teacher-list__container">
+  <div class="inner-container">
+    <h1 class="heading"
+      *ngIf="modelService.faculty !== null">Преподаватели факультета {{ modelService.faculty.briefName }}</h1>
+    <div class="create-button"
+      (click)="createTeacher()">
+      Добавить
+    </div>
+    <div class="teacher-list">
+      <div class="teacher"
+        *ngFor="let teacher of teachers">
+        <span class="name"> {{ teacher.name }} </span>
+        <div class="edit-button"
+          (click)="editTeacher(teacher)">Редактировать</div>
+      </div>
+    </div>
+    <app-pagination-buttons #pagination>
+    </app-pagination-buttons>
+  </div>
+</div>

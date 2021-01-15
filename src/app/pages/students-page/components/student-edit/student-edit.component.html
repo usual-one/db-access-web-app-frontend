@@ -1,0 +1,48 @@
+<div class="student-edit__container">
+  <div class="inner-container">
+    <h1 class="heading"
+      *ngIf="stateService.innerState === 'edit'">Редактировать студента</h1>
+    <h1 class="heading"
+      *ngIf="stateService.innerState === 'create'">Добавить студента</h1>
+    <div class="inputs"
+      *ngIf="student !== null">
+      <div class="input-container">
+        <div class="property-name">
+          Имя:
+        </div>
+        <input type="text" 
+         placeholder="имя"
+         [(ngModel)]="student.name">
+      </div>
+      <div class="input-container">
+        <div class="property-name">
+          Группа: 
+        </div>
+        <input type="text"
+         placeholder="группа"
+         [(ngModel)]="student.group.name">
+      </div>
+      <div class="input-container">
+        <div class="property-name">
+          Состояние:
+        </div>
+        <input type="text"
+        placeholder="состояние"
+        [(ngModel)]="student.state">
+      </div>
+    </div>
+    <div class="buttons">
+      <div class="create-button"
+        (click)="confirmCreation()"
+        *ngIf="stateService.innerState === 'create'">Добавить</div>
+      <div class="confirm-button"
+        (click)="confirmChanges()"
+        *ngIf="stateService.innerState === 'edit'">Сохранить</div>
+      <div class="cancel-button"
+        (click)="cancelChanges()">Отменить</div>
+      <div class="remove-button"
+        (click)="removeStudent()"
+        *ngIf="stateService.innerState === 'edit'">Удалить</div>
+    </div>
+  </div>
+</div>

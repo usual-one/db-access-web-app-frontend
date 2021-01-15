@@ -1,0 +1,14 @@
+<div class="group-selection__container">
+  <div class="inner-container">
+    <h1 class="heading">Выберите группу</h1>
+    <div class="group-list"
+      *ngFor="let group of groups">
+      <div class="group"
+        (click)="selectGroup(group)">
+        <span class="name"> {{ group.name }} </span>
+      </div>
+    </div>
+    <app-pagination-buttons #pagination>
+    </app-pagination-buttons>
+  </div>
+</div>

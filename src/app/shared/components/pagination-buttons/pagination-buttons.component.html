@@ -1,0 +1,11 @@
+<div class="pagination-buttons__container">
+  <div class="first-page button"
+    (click)="firstPage()">1</div>
+  <div class="previous-page button"
+    (click)="previousPage()">&lt;</div>
+  <span class="current-page">
+    {{ page.value }}
+  </span>
+  <div class="next-page button"
+    (click)="nextPage()">&gt;</div>
+</div>

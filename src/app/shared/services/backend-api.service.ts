@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { environment } from '../../../environments/environment';
 import { Faculty, Group, Student, Teacher } from '../models';
@@ -77,7 +77,7 @@ export class BackendApiService {
   }
 
   public async updateStudent(id: number, update: Student): Promise<void> {
-    await this.http.put<Student>(`${this.hostUrl}/students`, {
+    await this.http.put<Student>(`${this.hostUrl}/students`, update, {
       params: {
         id: id.toString()
       }
@@ -85,7 +85,7 @@ export class BackendApiService {
   }
 
   public async updateTeacher(id: number, update: Teacher): Promise<void> {
-    await this.http.put<Teacher>(`${this.hostUrl}/teachers`, {
+    await this.http.put<Teacher>(`${this.hostUrl}/teachers`, update, {
       params: {
         id: id.toString()
       }

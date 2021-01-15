@@ -1,14 +1,21 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { SharedModule } from './shared/shared.module';
-import { IndexPageComponent } from './pages/index-page/index-page.component';
-import { StudentsPageComponent } from './pages/students-page/students-page.component';
-import { TeachersPageComponent } from './pages/teachers-page/teachers-page.component';
-import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
+import { IndexPageComponent,
+         NotFoundPageComponent,
+         StudentsPageComponent,
+         TeachersPageComponent } from './pages';
+import { GroupSelectionComponent, 
+         StudentEditComponent,
+         StudentListComponent } from './pages/students-page/components';
+import { TeacherEditComponent,
+         TeacherListComponent } from './pages/teachers-page/components';
 
 @NgModule({
   declarations: [
@@ -16,12 +23,19 @@ import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.com
     IndexPageComponent,
     StudentsPageComponent,
     TeachersPageComponent,
-    NotFoundPageComponent
+    NotFoundPageComponent,
+    StudentListComponent,
+    StudentEditComponent,
+    TeacherEditComponent,
+    TeacherListComponent,
+    GroupSelectionComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SharedModule
+    SharedModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [

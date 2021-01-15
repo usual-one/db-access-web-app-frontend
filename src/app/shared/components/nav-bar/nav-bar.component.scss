@@ -21,7 +21,7 @@
 
   margin: 0 2px;
 
-  background-color: #fff;
+  background-color: #eee;
   color: #888;
   font-size: 16px;
   font-weight: bold;
@@ -35,5 +35,6 @@
   background-color: var(--dim-accent-color);
   color: #000;
   transition: .3s;
+  cursor: pointer;
 }
 

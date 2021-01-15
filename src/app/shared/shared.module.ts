@@ -1,18 +1,24 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { NavBarComponent } from './components';
+import { FacultySelectionComponent,
+         NavBarComponent,
+         PaginationButtonsComponent } from './components';
 
 
 @NgModule({
   declarations: [
-    NavBarComponent
+    FacultySelectionComponent,
+    NavBarComponent,
+    PaginationButtonsComponent
   ],
   imports: [
     CommonModule
   ],
   exports: [
-    NavBarComponent
+    FacultySelectionComponent,
+    NavBarComponent,
+    PaginationButtonsComponent
   ]
 })
 export class SharedModule { }

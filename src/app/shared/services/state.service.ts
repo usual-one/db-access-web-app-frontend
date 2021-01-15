@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 type PageState = 'index' | 'not-found' | 'students' | 'teachers';
-type InnerState = '' | 'faculties' | 'groups' | 'editing';
+type InnerState = '' | 'faculties' | 'groups' | 'edit' | 'create';
 
 @Injectable({
   providedIn: 'root'

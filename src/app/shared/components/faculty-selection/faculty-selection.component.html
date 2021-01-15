@@ -1,0 +1,17 @@
+<div class="faculty-selection__container">
+  <div class="inner-container">
+    <h1 class="heading">Выберите факультет</h1>
+    <div class="faculty-list"
+      *ngFor="let faculty of faculties">
+      <div class="faculty"
+        (click)="selectFaculty(faculty)">
+        <div class="brief-name__container">
+          <span class="brief-name"> {{ faculty.briefName }} </span>
+        </div>
+        <span class="name"> {{ faculty.name }} </span>
+      </div>
+    </div>
+    <app-pagination-buttons #pagination>
+    </app-pagination-buttons>
+  </div>
+</div>
