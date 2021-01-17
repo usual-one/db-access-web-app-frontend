@@ -1,0 +1,20 @@
+<div class="group-list__container">
+  <div class="inner-container">
+    <h1 class="heading"
+      *ngIf="modelService.faculty !== null">Группы факультета {{ modelService.faculty.briefName }}</h1>
+    <div class="create-button"
+      (click)="createGroup()">
+      Добавить
+    </div>
+    <div class="group-list"
+      *ngFor="let group of groups">
+      <div class="group">
+        <span class="name"> {{ group.name }} </span>
+        <div class="edit-button"
+          (click)="editGroup(group)">Редактировать</div>
+      </div>
+    </div>
+    <app-pagination-buttons #pagination>
+    </app-pagination-buttons>
+  </div>
+</div>

@@ -1,26 +1,42 @@
-<div class="teacher-edit__container">
+<div class="group-edit__container">
   <div class="inner-container">
     <h1 class="heading"
-      *ngIf="stateService.innerState === 'edit'">Редактировать преподавателя</h1>
+      *ngIf="stateService.innerState === 'edit'">Редактировать группу</h1>
     <h1 class="heading"
-      *ngIf="stateService.innerState === 'create'">Добавить преподавателя</h1>
+      *ngIf="stateService.innerState === 'create'">Добавить группу</h1>
     <div class="inputs"
-      *ngIf="teacher !== null">
+      *ngIf="group !== null">
       <div class="input-container">
         <div class="property-name">
-          Имя:
+          Название:
         </div>
         <input type="text" 
-         placeholder="имя"
-         [(ngModel)]="teacher.name">
+         placeholder="название"
+         [(ngModel)]="group.name">
       </div>
       <div class="input-container">
         <div class="property-name">
-          Факультет: 
+          Факультет
         </div>
         <input type="text"
          placeholder="факультет"
-         [(ngModel)]="teacher.faculty.briefName">
+         [(ngModel)]="group.faculty.briefName">
+      </div>
+      <div class="input-container">
+        <div class="property-name">
+          Курс:
+        </div>
+        <input type="number" 
+         placeholder="курс"
+         [(ngModel)]="group.year">
+      </div>
+      <div class="input-container">
+        <div class="property-name">
+          Тип:
+        </div>
+        <input type="text" 
+         placeholder="тип"
+         [(ngModel)]="group.type">
       </div>
     </div>
     <div class="buttons">
@@ -33,7 +49,7 @@
       <div class="cancel-button"
         (click)="cancelChanges()">Отменить</div>
       <div class="remove-button"
-        (click)="removeTeacher()"
+        (click)="removeStudent()"
         *ngIf="stateService.innerState === 'edit'">Удалить</div>
     </div>
   </div>

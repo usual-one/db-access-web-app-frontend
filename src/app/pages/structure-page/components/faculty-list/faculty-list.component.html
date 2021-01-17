@@ -1,0 +1,23 @@
+<div class="faculty-list__container">
+  <div class="inner-container">
+    <h1 class="heading">Факультеты</h1>
+    <div class="create-button"
+      (click)="createFaculty()">
+      Добавить
+    </div>
+    <div class="faculty-list"
+      *ngFor="let faculty of faculties">
+      <div class="faculty"
+        (click)="selectFaculty(faculty)">
+        <div class="brief-name__container">
+          <span class="brief-name"> {{ faculty.briefName }} </span>
+        </div>
+        <span class="name"> {{ faculty.name }} </span>
+        <div class="edit-button"
+          (click)="editFaculty(faculty)">Редактировать</div>
+      </div>
+    </div>
+    <app-pagination-buttons #pagination>
+    </app-pagination-buttons>
+  </div>
+</div>

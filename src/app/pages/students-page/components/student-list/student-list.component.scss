@@ -43,7 +43,7 @@
 
 .create-button:hover {
   transition: .1s;
-  background-color: var(--dim-accent-color);
+  background-color: var(--dark-accent-color);
   cursor: pointer;
 }
 
@@ -89,7 +89,7 @@
 }
 
 .edit-button:hover {
-  background-color: var(--dim-accent-color);
+  background-color: var(--dark-accent-color);
   transition: .1s;
   cursor: pointer;
 }

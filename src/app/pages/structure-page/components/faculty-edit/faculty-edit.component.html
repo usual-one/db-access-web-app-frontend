@@ -1,26 +1,26 @@
-<div class="teacher-edit__container">
+<div class="faculty-edit__container">
   <div class="inner-container">
     <h1 class="heading"
-      *ngIf="stateService.innerState === 'edit'">Редактировать преподавателя</h1>
+      *ngIf="stateService.innerState === 'edit'">Редактировать факультет</h1>
     <h1 class="heading"
-      *ngIf="stateService.innerState === 'create'">Добавить преподавателя</h1>
+      *ngIf="stateService.innerState === 'create'">Добавить факультет</h1>
     <div class="inputs"
-      *ngIf="teacher !== null">
+      *ngIf="faculty !== null">
       <div class="input-container">
         <div class="property-name">
-          Имя:
+          Название:
         </div>
         <input type="text" 
-         placeholder="имя"
-         [(ngModel)]="teacher.name">
+         placeholder="название"
+         [(ngModel)]="faculty.name">
       </div>
       <div class="input-container">
         <div class="property-name">
-          Факультет: 
+          Краткое название: 
         </div>
         <input type="text"
-         placeholder="факультет"
-         [(ngModel)]="teacher.faculty.briefName">
+         placeholder="краткое название"
+         [(ngModel)]="faculty.briefName">
       </div>
     </div>
     <div class="buttons">
@@ -33,7 +33,7 @@
       <div class="cancel-button"
         (click)="cancelChanges()">Отменить</div>
       <div class="remove-button"
-        (click)="removeTeacher()"
+        (click)="removeStudent()"
         *ngIf="stateService.innerState === 'edit'">Удалить</div>
     </div>
   </div>

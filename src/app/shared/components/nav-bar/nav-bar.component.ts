@@ -25,4 +25,7 @@ export class NavBarComponent implements OnInit {
     this.router.navigate(['teachers']);
   }
 
+  public openStructurePage(): void {
+    this.router.navigate(['structure']);
+  }
 }

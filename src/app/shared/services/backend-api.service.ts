@@ -21,6 +21,14 @@ export class BackendApiService {
     await this.http.post<Teacher>(`${this.hostUrl}/teachers`, teacher).toPromise();
   }
 
+  public async createFaculty(faculty: Faculty): Promise<void> {
+    await this.http.post<Faculty>(`${this.hostUrl}/structure/faculties`, faculty).toPromise();
+  }
+
+  public async createGroup(group: Group): Promise<void> {
+    await this.http.post<Group>(`${this.hostUrl}/structure/groups`, group).toPromise();
+  }
+
   public async getFaculties(count: number, offset: number): Promise<Faculty[]> {
     return await this.http.get<Faculty[]>(`${this.hostUrl}/structure/faculties`, {
       params: {
@@ -76,6 +84,22 @@ export class BackendApiService {
     }).toPromise();
   }
 
+  public async removeGroup(id: number): Promise<void> {
+    await this.http.delete(`${this.hostUrl}/structure/groups`, {
+      params: {
+        id: id.toString()
+      }
+    }).toPromise();
+  }
+
+  public async removeFaculty(id: number): Promise<void> {
+    await this.http.delete(`${this.hostUrl}/structure/faculties`, {
+      params: {
+        id: id.toString()
+      }
+    }).toPromise();
+  }
+
   public async updateStudent(id: number, update: Student): Promise<void> {
     await this.http.put<Student>(`${this.hostUrl}/students`, update, {
       params: {
@@ -86,6 +110,22 @@ export class BackendApiService {
 
   public async updateTeacher(id: number, update: Teacher): Promise<void> {
     await this.http.put<Teacher>(`${this.hostUrl}/teachers`, update, {
+      params: {
+        id: id.toString()
+      }
+    }).toPromise();
+  }
+
+  public async updateGroup(id: number, update: Group): Promise<void> {
+    await this.http.put<Group>(`${this.hostUrl}/structure/groups`, update, {
+      params: {
+        id: id.toString()
+      }
+    }).toPromise();
+  }
+
+  public async updateFaculty(id: number, update: Faculty): Promise<void> {
+    await this.http.put<Faculty>(`${this.hostUrl}/structure/faculties`, update, {
       params: {
         id: id.toString()
       }

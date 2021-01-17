@@ -5,13 +5,18 @@ import { FacultySelectionComponent } from './shared/components';
 
 import { IndexPageComponent,
          NotFoundPageComponent,
+         StructurePageComponent,
          StudentsPageComponent,
-         TeachersPageComponent } from './pages';
+         TeachersPageComponent} from './pages';
 import { GroupSelectionComponent,
          StudentEditComponent,
          StudentListComponent } from './pages/students-page/components';
 import { TeacherEditComponent,
          TeacherListComponent } from './pages/teachers-page/components';
+import { GroupListComponent,
+         GroupEditComponent,
+         FacultyListComponent,
+         FacultyEditComponent } from './pages/structure-page/components';
 
 const routes: Routes = [
   {
@@ -73,6 +78,41 @@ const routes: Routes = [
       {
         path: 'create',
         component: TeacherEditComponent
+      }
+    ]
+  },
+  {
+    path: 'structure',
+    component: StructurePageComponent,
+    children: [
+      {
+        path: '',
+        redirectTo: 'faculty-list',
+        pathMatch: 'full'
+      },
+      {
+        path: 'group-list',
+        component: GroupListComponent
+      },
+      {
+        path: 'group-edit',
+        component: GroupEditComponent
+      },
+      {
+        path: 'group-create',
+        component: GroupEditComponent
+      },
+      {
+        path: 'faculty-list',
+        component: FacultyListComponent
+      },
+      {
+        path: 'faculty-edit',
+        component: FacultyEditComponent
+      },
+      {
+        path: 'faculty-create',
+        component: FacultyEditComponent
       }
     ]
   },

@@ -1,4 +1,4 @@
-.teacher-list__container {
+.group-list__container {
   width: 100%;
 
   display: flex;
@@ -47,16 +47,17 @@
   cursor: pointer;
 }
 
-.teacher-list {
+.group-list {
+  margin-bottom: 10px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.teacher {
+.group {
   width: 100%; 
   height: 50px;
-  margin-bottom: 10px;
 
   padding: 0 20px;
 
@@ -93,4 +94,3 @@
   transition: .1s;
   cursor: pointer;
 }
-

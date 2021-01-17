@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { IndexPageComponent,
          NotFoundPageComponent,
+         StructurePageComponent,
          StudentsPageComponent,
          TeachersPageComponent } from './pages';
 import { GroupSelectionComponent, 
@@ -16,6 +17,10 @@ import { GroupSelectionComponent,
          StudentListComponent } from './pages/students-page/components';
 import { TeacherEditComponent,
          TeacherListComponent } from './pages/teachers-page/components';
+import { FacultyEditComponent, 
+         FacultyListComponent,
+         GroupEditComponent,
+         GroupListComponent } from './pages/structure-page/components';
 
 @NgModule({
   declarations: [
@@ -28,7 +33,12 @@ import { TeacherEditComponent,
     StudentEditComponent,
     TeacherEditComponent,
     TeacherListComponent,
-    GroupSelectionComponent
+    GroupSelectionComponent,
+    StructurePageComponent,
+    FacultyListComponent,
+    GroupListComponent,
+    FacultyEditComponent,
+    GroupEditComponent
   ],
   imports: [
     BrowserModule,
