@@ -14,7 +14,7 @@
 
 Run for installing the dependencies:
 ```sh
-npm install
+$ npm install
 ```
 
 ## Start
