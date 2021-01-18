@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 
 import { Group } from '../../../../shared/models';
 import { BackendApiService,
+         ErrorService,
          SelectedModelService,
          StateService } from '../../../../shared/services';
 
@@ -16,6 +17,7 @@ export class GroupEditComponent implements OnInit {
   public group: Group
 
   constructor(private backend: BackendApiService,
+              public errorService: ErrorService,
               private modelService: SelectedModelService,
               private router: Router,
               public stateService: StateService) { }
@@ -41,8 +43,11 @@ export class GroupEditComponent implements OnInit {
   }
 
   public confirmCreation(): void {
+    this.errorService.invalidFaculty = false;
     this.backend.createGroup(this.group).then(() => {
       this.exit();
+    }).catch(() => {
+      this.errorService.invalidFaculty = true;
     });
   }
 
@@ -51,8 +56,11 @@ export class GroupEditComponent implements OnInit {
   }
 
   public confirmChanges(): void {
+    this.errorService.invalidFaculty = false;
     this.backend.updateGroup(this.group.id, this.group).then(() => {
       this.exit();
+    }).catch(() => {
+      this.errorService.invalidFaculty = true;
     });
   }
 

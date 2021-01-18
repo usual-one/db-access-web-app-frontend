@@ -18,7 +18,8 @@
         <div class="property-name">
           Факультет
         </div>
-        <input type="text"
+        <input [ngClass]="{'error-input': errorService.invalidFaculty}" 
+         type="text"
          placeholder="факультет"
          [(ngModel)]="group.faculty.briefName">
       </div>
@@ -38,6 +39,8 @@
          placeholder="тип"
          [(ngModel)]="group.type">
       </div>
+      <span class="error-message"
+        *ngIf="errorService.invalidFaculty">Некорректные данные</span>
     </div>
     <div class="buttons">
       <div class="create-button"

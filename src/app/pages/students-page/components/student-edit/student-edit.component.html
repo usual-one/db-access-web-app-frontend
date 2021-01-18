@@ -18,7 +18,8 @@
         <div class="property-name">
           Группа: 
         </div>
-        <input type="text"
+        <input [ngClass]="{'error-input': errorService.invalidGroup}"
+         type="text"
          placeholder="группа"
          [(ngModel)]="student.group.name">
       </div>
@@ -30,6 +31,8 @@
         placeholder="состояние"
         [(ngModel)]="student.state">
       </div>
+      <span class="error-message"
+        *ngIf="errorService.invalidGroup">Некорректные данные</span>
     </div>
     <div class="buttons">
       <div class="create-button"

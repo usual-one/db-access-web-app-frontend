@@ -18,10 +18,13 @@
         <div class="property-name">
           Факультет: 
         </div>
-        <input type="text"
+        <input [ngClass]="{'error-input': errorService.invalidFaculty}"
+         type="text"
          placeholder="факультет"
          [(ngModel)]="teacher.faculty.briefName">
       </div>
+      <span class="error-message"
+        *ngIf="errorService.invalidFaculty">Некорректные данные</span>
     </div>
     <div class="buttons">
       <div class="create-button"

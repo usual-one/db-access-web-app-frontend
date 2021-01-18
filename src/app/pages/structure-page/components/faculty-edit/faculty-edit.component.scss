@@ -40,7 +40,10 @@
 }
 
 .input-container input {
+  height: 100%;
   width: 50%;
+
+  border: 0;
 }
 
 .property-name {

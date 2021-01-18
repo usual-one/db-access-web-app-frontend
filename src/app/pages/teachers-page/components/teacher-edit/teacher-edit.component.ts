@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 
 import { Teacher } from '../../../../shared/models';
 import { BackendApiService,
+         ErrorService,
          SelectedModelService,
          StateService } from '../../../../shared/services';
 
@@ -16,6 +17,7 @@ export class TeacherEditComponent implements OnInit {
   public teacher: Teacher;
 
   constructor(private backend: BackendApiService,
+              public errorService: ErrorService,
               private modelService: SelectedModelService,
               private router: Router,
               public stateService: StateService) { }
@@ -39,12 +41,15 @@ export class TeacherEditComponent implements OnInit {
   }
 
   private exit(): void {
-      this.router.navigate(['teachers/list']);
+    this.router.navigate(['teachers/list']);
   }
 
   public confirmCreation(): void {
+    this.errorService.invalidFaculty = false;
     this.backend.createTeacher(this.teacher).then(() => {
       this.exit();
+    }).catch(() => {
+      this.errorService.invalidFaculty = true;
     });
   }
 
@@ -53,8 +58,11 @@ export class TeacherEditComponent implements OnInit {
   }
 
   public confirmChanges(): void {
+    this.errorService.invalidFaculty = false;
     this.backend.updateTeacher(this.teacher.id, this.teacher).then(() => {
       this.exit();
+    }).catch(() => {
+      this.errorService.invalidFaculty = true;
     });
   }
 
