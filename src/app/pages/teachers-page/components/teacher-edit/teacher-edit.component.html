@@ -1,7 +1,7 @@
 <div class="teacher-edit__container">
   <div class="inner-container">
     <h1 class="heading"
-      *ngIf="stateService.innerState === 'edit'">Редактировать преподавателя</h1>
+      *ngIf="stateService.innerState === 'edit'">Подробнее</h1>
     <h1 class="heading"
       *ngIf="stateService.innerState === 'create'">Добавить преподавателя</h1>
     <div class="inputs"
@@ -27,14 +27,14 @@
         *ngIf="errorService.invalidFaculty">Некорректные данные</span>
     </div>
     <div class="buttons">
+      <div class="cancel-button"
+        (click)="cancelChanges()">Назад</div>
       <div class="create-button"
         (click)="confirmCreation()"
         *ngIf="stateService.innerState === 'create'">Добавить</div>
       <div class="confirm-button"
         (click)="confirmChanges()"
         *ngIf="stateService.innerState === 'edit'">Сохранить</div>
-      <div class="cancel-button"
-        (click)="cancelChanges()">Отменить</div>
       <div class="remove-button"
         (click)="removeTeacher()"
         *ngIf="stateService.innerState === 'edit'">Удалить</div>
